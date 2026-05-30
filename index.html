@@ -1,29 +1,453 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marlik Depp</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marlik Depp | Independent Accounting Firm Succession</title>
+  <meta name="description" content="Marlik Depp helps independent accounting firm owners explore succession options while protecting clients, employees, and long-standing relationships." />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #64707d;
+      --line: #ded8cc;
+      --accent: #8a6a3f;
+      --accent-dark: #5f4829;
+      --soft: #eee7db;
+    }
 
-<style>
-html, body {
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-iframe {
-  width:100%;
-  height:100%;
-  border:none;
-}
-</style>
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
 
+    a { color: inherit; }
+
+    .site-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 26px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .top-phone {
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(238,231,219,.95));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 62px 54px;
+      box-shadow: 0 24px 70px rgba(71, 55, 31, .08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(138, 106, 63, .12);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      letter-spacing: -0.045em;
+      color: #171d24;
+    }
+
+    .hero-subtitle {
+      margin-top: 24px;
+      font-size: clamp(19px, 2.5vw, 27px);
+      color: #3a4652;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+      font-family: Arial, sans-serif;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    section {
+      margin-top: 34px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 16px 44px rgba(71, 55, 31, .055);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: #40505f;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      min-height: 100%;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p { margin: 0; color: #52606d; }
+
+    .check {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .headshot-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 12px;
+      box-shadow: 0 22px 60px rgba(31, 41, 51, .12);
+    }
+
+    .headshot-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+    }
+
+    .photo-caption {
+      padding: 14px 8px 4px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .profile-box {
+      background: #181f27;
+      color: white;
+      border-radius: 24px;
+      padding: 34px;
+      margin-top: 24px;
+    }
+
+    .profile-box .name {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .profile-box .title {
+      color: #d8c7a6;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
+
+    .contact-line {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      margin-top: 18px;
+    }
+
+    .credential-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .credential {
+      border-left: 4px solid var(--accent);
+      padding: 4px 0 4px 18px;
+    }
+
+    .credential h3 { font-size: 23px; margin-bottom: 6px; }
+    .credential p { margin: 0; color: var(--muted); }
+
+    .quote {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: #171d24;
+      margin: 0;
+    }
+
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .reason {
+      background: #fbfaf7;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .reason strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .reason span { color: var(--muted); }
+
+    .final {
+      text-align: center;
+      background: #181f27;
+      color: white;
+    }
+
+    .final h2 { color: white; }
+    .final p { color: #d3d8dd; max-width: 760px; margin: 18px auto 0; }
+    .final .button { margin-top: 28px; }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    @media (max-width: 820px) {
+      .hero, section { padding: 32px 22px; border-radius: 20px; }
+      .section-header, .split, .grid-3, .reason-grid { grid-template-columns: 1fr; }
+      .headshot-card { max-width: 360px; margin: 0 auto; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+    }
+  </style>
 </head>
 <body>
+  <div class="site-shell">
+    <nav class="nav">
+      <div class="brand">Marlik Depp</div>
+      <a class="top-phone" href="tel:14054046905">405-404-6905</a>
+    </nav>
 
-<iframe src="document.pdf"></iframe>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">For owners considering the future of their practice</div>
+        <h1>The Next Chapter for Independent Accounting Firms</h1>
+        <p class="hero-subtitle">Whether retirement is one year away or ten years away, many firm owners eventually face the same question: what happens to the clients, employees, and relationships they have spent years building?</p>
+        <p class="hero-note">My goal is to build relationships with firm owners before a transition becomes urgent and, when the fit is right, continue serving the clients, employees, and community that make the firm valuable.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="tel:14054046905">Call 405-404-6905</a>
+        </div>
+      </div>
+    </header>
 
+    <section id="buyer">
+      <div class="section-header">
+        <h2>A Different Kind of Buyer</h2>
+        <p class="lead">Accounting firms are built on trust. For many owners, the business represents decades of relationships with clients, employees, and the community. The right transition is about more than valuation and deal terms. It is about finding someone who genuinely cares about continuing what has been built.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="check">✓</div><h3>Long-Term Ownership</h3><p>My goal is to own and operate a firm for decades, not flip it.</p></div>
+        <div class="card"><div class="check">✓</div><h3>Seller Financing Friendly</h3><p>Open to structures that allow owners to transition on their timeline.</p></div>
+        <div class="card"><div class="check">✓</div><h3>Stewardship Mindset</h3><p>The goal is not simply to buy a practice. The goal is to continue serving clients, supporting employees, and building on what already works.</p></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="split">
+        <div class="headshot-card">
+          <img src="headshot.png" alt="Marlik Depp" />
+          <div class="photo-caption">BSBA Accounting | CM&amp;AA | CEPA</div>
+        </div>
+
+        <div>
+          <h2>Who I Am</h2>
+          <p class="lead">I am an accounting graduate, Certified Merger & Acquisition Advisor, and Certified Exit Planning Advisor building a long-term future in the accounting profession through practice ownership.</p>
+          <p>My focus is simple: helping firm owners explore succession options while protecting the people and relationships that make a practice valuable in the first place.</p>
+
+          <div class="profile-box">
+            <div class="name">Marlik Depp</div>
+            <div class="title">BSBA Accounting | CM&amp;AA | CEPA<br><br>Future Accounting Firm Owner</div>
+            <p>If you are thinking about the future of your firm, I believe the right transition is about more than finding a buyer. It is about finding someone who values the profession, understands the importance of client relationships, and is committed to continuing what you have spent years building.</p>
+            <div class="contact-line">📞 <a href="tel:14054046905">405-404-6905</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="section-header">
+        <h2>Education & Professional Credentials</h2>
+        <p class="lead">A background focused on accounting, succession planning, acquisitions, and long-term business continuity.</p>
+      </div>
+      <div class="credential-list">
+        <div class="credential"><h3>Accounting Degree (BSBAA)</h3><p>Bachelor of Science in Business Administration, Accounting. Coursework focused on financial accounting, taxation, auditing, financial statement analysis, and business operations.</p></div>
+        <div class="credential"><h3>Certified Merger & Acquisition Advisor (CM&AA)</h3><p>Completed professional training focused on mergers and acquisitions, transaction structures, valuation concepts, due diligence, and deal execution.</p></div>
+        <div class="credential"><h3>Certified Exit Planning Advisor (CEPA)</h3><p>Training focused on succession planning, business continuity, value acceleration, and helping owners prepare for future transitions.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="split">
+        <p class="quote">Succession should not be viewed as an ending. It should be viewed as a continuation.</p>
+        <div>
+          <h2>Why This Matters To Me</h2>
+          <p>Independent accounting firms are built on trust, relationships, and years of service to clients. Many owners eventually face an important question: what happens to my clients, employees, and firm when I am ready for the next chapter?</p>
+          <p>I chose to pursue accounting, succession planning, and firm acquisitions because I believe independent firms deserve strong successors. My goal is to learn from firm owners, understand the profession from the ground up, and help carry successful practices into their next phase while preserving the relationships and reputation that made them valuable in the first place.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="succession">
+      <div class="section-header">
+        <h2>Why Owners Reach Out</h2>
+        <p class="lead">Every firm is different. The right structure should fit the owner's goals, timeline, and desired level of involvement.</p>
+      </div>
+      <div class="reason-grid">
+        <div class="reason"><strong>No Internal Successor</strong><span>Children are not interested or employees do not want ownership.</span></div>
+        <div class="reason"><strong>Retirement Planning</strong><span>The business is valuable, but no clear transition exists.</span></div>
+        <div class="reason"><strong>Gradual Ownership Transfer</strong><span>The owner wants income and continuity while reducing involvement.</span></div>
+        <div class="reason"><strong>Flexible Structures</strong><span>Seller-friendly structures can allow transition on a timeline that works.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>What Matters Most</h2>
+        <p class="lead">The best transitions protect the parts of the firm that made it valuable in the first place.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="check">✓</div><h3>Clients Stay Cared For</h3><p>Service, trust, and continuity remain central to the transition.</p></div>
+        <div class="card"><div class="check">✓</div><h3>Employees Have Stability</h3><p>The transition should support the people who help the firm operate every day.</p></div>
+        <div class="card"><div class="check">✓</div><h3>Relationships Are Preserved</h3><p>The owner's reputation and legacy deserve to be treated with care.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="final">
+      <h2>Begin the Conversation Early</h2>
+      <p>Whether that conversation happens today or years from now, successful transitions begin with trust, shared values, and a genuine interest in preserving what makes a firm special.</p>
+      <p>You get paid while you step back, on a timeline you control.</p>
+      <a class="button primary" href="tel:14054046905">Contact Marlik: 405-404-6905</a>
+    </section>
+
+    <footer>
+      © 2026 Marlik Depp | Conversations are confidential and exploratory. | No transaction is expected or implied.
+    </footer>
+  </div>
 </body>
 </html>
